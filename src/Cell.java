@@ -5,7 +5,7 @@ public class Cell {
     private boolean east;
     private boolean south;
     private boolean west;
-    private String state;
+    private boolean visited;
     private Point position;
 
     public Cell() {
@@ -43,12 +43,12 @@ public class Cell {
         this.west = west;
     }
 
-    public String getState() {
-        return state;
+    public boolean isVisited() {
+        return visited;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setVisited(boolean visited) {
+        this.visited = visited;
     }
 
     public Point getPosition() {
@@ -66,47 +66,7 @@ public class Cell {
                 ", east=" + east +
                 ", south=" + south +
                 ", west=" + west +
+                ", visited=" + visited +
                 ", position=(" + (int) position.getX() + "," + (int) position.getY() + ")";
     }
-
-    /*private static final char OPEN = 'o';
-    private static final char VISITED = 'v';
-    private static final char CLOSED = '#';
-    private static final char ENTRANCE = 'e';
-    private static final char EXIT = 'x';
-
-    *//* Member variables. *//*
-    private int row;
-    private int column;
-    private char state;
-
-    *//* Constructor *//*
-    public Cell(int row,int column,char code) {
-        this.row = row;
-        this.column = column;
-        state = code;
-    }
-
-    *//* Accessor methods *//*
-    public boolean isOpen() { return state == OPEN || state == ENTRANCE || state == EXIT; }
-    public boolean isEntrance() { return state == ENTRANCE; }
-    public boolean isExit() { return state == EXIT; }
-    public int getRow() { return row; }
-    public int getColumn() { return column; }
-    public char toChar() {
-        return state;
-    }
-    public String toString() {
-        return "(" + row + "," + column + ":" + toChar() + ")";
-    }
-
-    *//* Mutator methods *//*
-    public void markVisited() {
-        if(state == OPEN)
-            state = VISITED;
-    }
-    public void clearVisited() {
-        if(state == VISITED)
-            state = OPEN;
-    }*/
 }
