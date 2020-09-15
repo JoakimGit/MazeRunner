@@ -24,7 +24,7 @@ public class Bug {
         Cell[] bottomRow = fullMaze[0];
         // Loop through bottom row to find the missing wall, i.e. the entrance
         for (Cell c : bottomRow) {
-            if (!c.isNorth() && c.getPosition().getY() > -1) {
+            if (!c.isNorth() && c.getPosition().getY() > -1 && c.getPosition().getY() < maze.getColumnNum()-1) {
                 setStart(c.getPosition());
                 setPosition(c.getPosition());
                 return;

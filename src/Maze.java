@@ -23,11 +23,20 @@ public class Maze {
     }
 
     public void createWalls() throws FileNotFoundException {
-        Scanner input = new Scanner(new File("E:\\Users\\Joakim\\Skoleting\\Opgaver\\Java\\Semester 3\\MazeRunner.txt"));
+        Scanner input = new Scanner(new File("E:\\Users\\Joakim\\Skoleting\\Opgaver\\Java\\Semester 3\\MazeRunner-2.txt"));
+        input.nextLine();
+        String[] tokens;
+        boolean columnSwitch = false;
         while (input.hasNextLine()) {
             String line = input.nextLine();
-            String[] tokens = line.split(",");
-            if (tokens.length == columnNum) {
+            if (line.length() == 1) {
+                columnSwitch = true;
+                continue;
+            }
+            else {
+                tokens = line.split(",");
+            }
+            if (!columnSwitch) {
                 int row = Integer.parseInt(tokens[0]);
                 int count = 1;
                 for (int i = 0; i < columnNum-1; i++) {
@@ -40,7 +49,7 @@ public class Maze {
                     count++;
                 }
             }
-            else if (tokens.length == rowNum) {
+            else {
                 int col = Integer.parseInt(tokens[0]);
                 int count = 1;
                 for (int i = 0; i < rowNum-1; i++) {
@@ -52,6 +61,14 @@ public class Maze {
                     }
                     count++;
                 }
+            }
+        }
+    }
+
+    public void printMaze() {
+        for (Cell[] c : maze) {
+            for (Cell d : c) {
+                System.out.println(d);
             }
         }
     }
