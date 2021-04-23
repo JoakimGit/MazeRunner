@@ -1,20 +1,35 @@
 Given a maze represented by 1s and 0s in columns and rows like the following:
 
 6
+
 0, 1, 0, 1, 1, 1, 1
+
 1, 0, 1, 1, 0, 0, 0
+
 2, 1, 0, 0, 1, 0, 0
+
 3, 0, 0, 1, 0, 1, 0
+
 4, 1, 1, 1, 1, 0, 1
+
 5, 1, 1, 0, 1, 1, 1
+
 7
+
 0, 1, 1, 1, 1, 1
+
 1, 0, 0, 1, 0, 0
+
 2, 0, 1, 1, 1, 0
+
 3, 0, 0, 0, 0, 0
+
 4, 1, 1, 0, 1, 0
+
 5, 0, 1, 1, 0, 0
+
 6, 1, 1, 1, 1, 1
+
 
 Where the first block is the rows and the second is columns. A 1 means a wall and a 0 means no wall. 
 
